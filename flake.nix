@@ -5,6 +5,11 @@
   };
 
   outputs = { self, nixpkgs }: {
-    nixosModules.flakeSupport = import ./flake-support.nix;
+    nixosModules = {
+      nix = import ./nix.nix;
+      common = import ./common.nix;
+      hardware = import ./hardware.nix;
+      laptop = import ./laptop.nix;
+    };
   };
 }

@@ -4,6 +4,7 @@
   imports = [
     ./common.nix
   ];
+
   options = {
   };
 
@@ -57,6 +58,9 @@
     networking.networkmanager.enable = true;
     networking.networkmanager.plugins = (with pkgs; [
       networkmanager-openvpn
+    ]);
+
+    environment.systemPackages = with pkgs; [
       blueman
       bluez-tools
 
@@ -72,7 +76,7 @@
       alsa-tools
       alsa-utils
       smartmontools
-    ]);
+    ];
 
     services.blueman.enable = true;
 
