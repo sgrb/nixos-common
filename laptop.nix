@@ -67,7 +67,7 @@ in {
 
     services.tlp.enable = true;
 
-    hardware.pulseaudio.enable = true;
+    services.pulseaudio.enable = true;
     services.pipewire.enable = false;
 
     # Enable touchpad support.
