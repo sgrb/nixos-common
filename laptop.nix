@@ -6,6 +6,16 @@ in {
     ./hardware.nix
   ];
   config = {
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+      "corefonts"
+      "zoom-us"
+      "zoom"
+      "faac" # needed for zoom-us
+      "unrar"
+      "font-bh-lucidatypewriter"
+      "font-bh-lucidatypewriter-75dpi"
+    ];
+
     environment.systemPackages = with pkgs; [
       fprintd
       #        firefoxPackages.librewolf
