@@ -1,6 +1,8 @@
 # For real hardware installation
 { config, pkgs, lib, options, ... }:
-{
+let
+  resumeDev = config.fileSystems."/".device;
+in {
   imports = [
     ./common.nix
   ];
@@ -10,12 +12,15 @@
 
   config = {
     # Use the systemd-boot EFI boot loader.
-    # boot.loader.systemd-boot.enable = true;
-    boot.loader.grub.efiSupport = true;
+    boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.efi.efiSysMountPoint = "/boot";
-    boot.loader.grub.device = "nodev";
-    boot.loader.grub.enableCryptodisk = true;
+
+    boot.resumeDevice = resumeDev;
+    boot.kernelParams = [ "resume=${resumeDev}" ];
+
+    # needed for resume from swap file
+    boot.initrd.systemd.enable = true;
 
     boot.extraModprobeConfig = ''
                              options cfg80211 ieee80211_regdom="RU"
