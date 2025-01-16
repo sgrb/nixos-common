@@ -1,8 +1,6 @@
 # For real hardware installation
 { config, pkgs, lib, options, ... }:
-let
-  resumeDev = config.fileSystems."/".device;
-in {
+{
   imports = [
     ./common.nix
   ];
@@ -15,8 +13,6 @@ in {
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.efi.efiSysMountPoint = "/boot";
-
-    boot.resumeDevice = resumeDev;
 
     # needed for resume from swap file
     boot.initrd.systemd.enable = true;
