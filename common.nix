@@ -4,17 +4,6 @@
     ./nix.nix
   ];
   config = {
-    security.wrappers = let pmWrapper = name: {
-      source = "${pkgs.pmount}/bin/${name}";
-      owner = "root";
-      group = "root";
-      setuid = true;
-    };
-                        in
-                          {
-                            pmount = pmWrapper "pmount";
-                            pumount = pmWrapper "pumount" ;
-                          };
     environment.homeBinInPath = true;
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -26,7 +15,6 @@
       tcpdump
       inetutils
       whois
-      pmount
       tcptraceroute
       bind
       nmap
