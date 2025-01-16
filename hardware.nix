@@ -17,7 +17,6 @@ in {
     boot.loader.efi.efiSysMountPoint = "/boot";
 
     boot.resumeDevice = resumeDev;
-    boot.kernelParams = [ "resume=${resumeDev}" ];
 
     # needed for resume from swap file
     boot.initrd.systemd.enable = true;
