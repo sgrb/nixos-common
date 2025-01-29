@@ -23,6 +23,9 @@
       file
       lsof
       psmisc
+      atop
+      htop
+      btop
       tcpdump
       inetutils
       whois
