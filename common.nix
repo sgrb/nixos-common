@@ -4,6 +4,10 @@
     ./nix.nix
   ];
   config = {
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+      "unrar"
+    ];
+
     security.wrappers = let pmWrapper = name: {
       source = "${pkgs.pmount}/bin/${name}";
       owner = "root";
