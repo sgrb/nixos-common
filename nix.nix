@@ -21,8 +21,6 @@
       # binaryCachePublicKeys = [ "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=" ];
       settings = {
         auto-optimise-store = true;
-        max-jobs = 2;
-        cores = 4;
         experimental-features = ["nix-command" "flakes"];
       };
     };
@@ -37,6 +35,7 @@
         nix-tree
         nixd
         nix-output-monitor
+        nvd
     ];
 
     programs.nix-index.enable = true;
