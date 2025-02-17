@@ -36,7 +36,7 @@
       whois
       pmount
       tcptraceroute
-      bind
+      dnsutils
       nmap
       pv
       unzip
