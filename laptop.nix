@@ -1,7 +1,5 @@
 { config, pkgs, lib, options, ... }:
-let
-  bestVer = a: b: if pkgs.lib.versionOlder b.version a.version then a else b;
-in {
+{
   imports = [
     ./hardware.nix
   ];
@@ -26,7 +24,7 @@ in {
       hunspellDicts.en-us-large
       hunspellDicts.ru-ru
       hyphen
-      (bestVer emacs-gtk emacs30-gtk3)
+      emacs-gtk
       gimp
       inkscape
       evince
