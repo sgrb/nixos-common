@@ -57,6 +57,7 @@
 
     services.upower = {
       enable = true;
+      criticalPowerAction = "Hibernate";
     };
 
     services.fprintd.enable = true;
