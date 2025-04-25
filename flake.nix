@@ -10,6 +10,7 @@
       common = import ./common.nix;
       hardware = import ./hardware.nix;
       laptop = import ./laptop.nix;
+      emacs = import ./emacs.nix;
     };
   };
 }
