@@ -1,6 +1,6 @@
 { config, lib, pkgs, options, ... }:
 let
-  isGui = config.services.displayManager.enable || config.services.displayManager;
+  isGui = config.services.displayManager.enable || config.services.xserver.enable;
 in
 {
   environment.systemPackages = let
