@@ -73,5 +73,7 @@
     services.libinput.enable = true;
 
     services.hardware.bolt.enable = true;
+
+    services.xscreensaver.enable = config.services.xserver.enable;
   };
 }
