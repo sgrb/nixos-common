@@ -21,6 +21,8 @@
                              options cfg80211 ieee80211_regdom="RU"
                                '';
 
+    boot.kernel.sysctl."kernel.sysrq" = 1;
+
     # Select internationalisation properties.
     i18n = {
       defaultLocale = "ru_RU.UTF-8";
