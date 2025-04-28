@@ -23,19 +23,6 @@
 
     boot.kernel.sysctl."kernel.sysrq" = 1;
 
-    # Select internationalisation properties.
-    i18n = {
-      defaultLocale = "ru_RU.UTF-8";
-    };
-
-    console = {
-      font = "LatArCyrHeb-16";
-      keyMap = "ru";
-    };
-
-    # Set your time zone.
-    time.timeZone = "Europe/Moscow";
-
     swapDevices = [
       {
         device = "/swap";

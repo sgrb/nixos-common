@@ -8,6 +8,19 @@
       "unrar"
     ];
 
+    # Select internationalisation properties.
+    i18n = {
+      defaultLocale = "ru_RU.UTF-8";
+    };
+
+    console = {
+      font = "LatArCyrHeb-16";
+      keyMap = "ru";
+    };
+
+    # Set your time zone.
+    time.timeZone = "Europe/Moscow";
+
     security.wrappers = let pmWrapper = name: {
       source = "${pkgs.pmount}/bin/${name}";
       owner = "root";
