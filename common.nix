@@ -49,6 +49,7 @@
       whois
       pmount
       tcptraceroute
+      mtr
       dnsutils
       nmap
       pv
