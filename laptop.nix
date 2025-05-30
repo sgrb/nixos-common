@@ -55,6 +55,12 @@
       startAgent = true;
     };
 
+    programs.firefox = {
+      enable = true;
+      languagePacks = [ "ru" ];
+      nativeMessagingHosts.packages = [ pkgs.browserpass ];
+    };
+
     services.upower = {
       enable = true;
       criticalPowerAction = "Hibernate";
