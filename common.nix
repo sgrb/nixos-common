@@ -69,7 +69,7 @@
       openssl
       man-pages
       subversion
-      gitAndTools.gitFull
+      gitFull
       colordiff
       jq
     ];
