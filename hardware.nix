@@ -31,7 +31,7 @@
     ];
 
     hardware.enableRedistributableFirmware = true;
-    hardware.firmware = [pkgs.firmwareLinuxNonfree];
+    hardware.firmware = [pkgs.linux-firmware];
 
     hardware.usb-modeswitch.enable = true;
 
