@@ -43,7 +43,7 @@
       iosevka-comfy.comfy
     ]);
 
-    programs.vim.package = pkgs.vimHugeX;
+    programs.vim.package = pkgs.vim-full;
 
     programs.gnupg.agent = {
       pinentryPackage = pkgs.pinentry-qt;
