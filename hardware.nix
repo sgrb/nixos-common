@@ -70,6 +70,6 @@
     services.blueman.enable = true;
 
     services.resolved.enable = true;
-    services.resolved.extraConfig = "DNSStubListenerExtra=127.0.0.1";
+    services.resolved.settings.Resolve.DNSStubListenerExtra="127.0.0.1";
   };
 }
