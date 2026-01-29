@@ -67,6 +67,7 @@
     };
 
     services.fprintd.enable = true;
+    security.pam.services.login.fprintAuth = false;
 
     services.printing.enable = true;
 
