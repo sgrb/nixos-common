@@ -77,6 +77,8 @@
     programs.vim.defaultEditor = true;
     programs.vim.enable = true;
 
+    programs.tmux.enable = true;
+
     # Enable the OpenSSH daemon.
     services.openssh.enable = true;
   };
