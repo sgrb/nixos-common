@@ -3,6 +3,7 @@
 {
   imports = [
     ./common.nix
+    ./grafana.nix
   ];
 
   options = {

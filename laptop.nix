@@ -79,5 +79,7 @@
     services.hardware.bolt.enable = true;
 
     services.xscreensaver.enable = config.services.xserver.enable;
+
+    services.prometheus.exporters.node.enabledCollectors = [ "wifi" "systemd" ];
   };
 }

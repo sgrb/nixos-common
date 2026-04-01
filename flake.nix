@@ -11,6 +11,7 @@
       hardware = import ./hardware.nix;
       laptop = import ./laptop.nix;
       emacs = import ./emacs.nix;
+      grafana = import ./grafana.nix;
     };
   };
 }
