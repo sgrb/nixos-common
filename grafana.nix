@@ -59,6 +59,13 @@
         };
         security.secret_key = "93e2dde3c4cc07d28b220aed8a83f6fe79f442a72e2b16403c5171641ade2a35";
       };
+
+      provision = {
+        enable = true;
+        dashboards.settings.providers = [{
+          options.path = ./grafana/dashboards;
+        }];
+      };
     };
 
     # Ensure Grafana can access the Prometheus data source
