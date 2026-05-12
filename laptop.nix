@@ -30,6 +30,7 @@
       evince
       mplayer mpv
       vlc
+      scrot xclip
     ];
 
     fonts.packages = (with pkgs; [
