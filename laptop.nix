@@ -37,7 +37,6 @@
       dejavu_fonts
       liberation_ttf
       corefonts
-      ttf_bitstream_vera
       carlito
       iosevka
       iosevka-comfy.comfy-wide
