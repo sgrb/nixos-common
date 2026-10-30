@@ -15,9 +15,6 @@
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.efi.efiSysMountPoint = "/boot";
 
-    # needed for resume from swap file
-    boot.initrd.systemd.enable = true;
-
     boot.extraModprobeConfig = ''
                              options cfg80211 ieee80211_regdom="RU"
                                '';
