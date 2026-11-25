@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+META=$(nix flake metadata --json /etc/nixos)
+
+OWNER=$(echo "$META" | jq -j '.locks.nodes | to_entries[] | select(.key == "nixpkgs") | .value.locked.owner')
+REPO=$(echo "$META" | jq -j '.locks.nodes | to_entries[] | select(.key == "nixpkgs") | .value.locked.repo')
+REV=$(echo "$META" | jq -j '.locks.nodes | to_entries[] | select(.key == "nixpkgs") | .value.locked.rev')
+
+INPUT_URL="github:${OWNER}/${REPO}/${REV}"
+
+nix flake update --override-input nixpkgs "$INPUT_URL" nixpkgs

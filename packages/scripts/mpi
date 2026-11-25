@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+
+tdir=`mktemp -d`
+trap 'rm -rf "$tdir"' EXIT
+
+# Пустой временный каталог подкладывается в /tmp через mount namespace
+# (bubblewrap), поэтому TMPDIR переопределять не нужно.
+bwrap --dev-bind / / --bind "$tdir" /tmp --unsetenv TMPDIR \
+    nono run -p pi --allow /tmp $(for d in ${NONO_ALLOW:-}; do echo -n " --allow $d"; done;) ${NONO_ARGS:-} -- pi "$@"
